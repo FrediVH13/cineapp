@@ -1,0 +1,7 @@
+body {
+  padding-top: 4rem;
+}
+
+.input-group-text {
+	background-color: #ffc107 !important;
+}
