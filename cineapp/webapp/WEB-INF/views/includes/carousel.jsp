@@ -23,14 +23,14 @@
 					<c:choose>
 						<c:when test="${loop.index==0}">
 							<div class="carousel-item active">
-								<img src="${urlPublic}/images/carousel/${c.carousel_image}"
+								<img src="${urlPublic}/images/carousel/${c.carouselImage}"
 									class="d-block w-100" alt="${c.description}"
 									title="${c.description}">
 							</div>
 						</c:when>
 						<c:otherwise>
 							<div class="carousel-item">
-								<img src="${urlPublic}/images/carousel/${c.carousel_image}"
+								<img src="${urlPublic}/images/carousel/${c.carouselImage}"
 									class="d-block w-100" alt="${c.description}"
 									title="${c.description}">
 							</div>

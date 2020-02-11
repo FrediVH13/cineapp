@@ -35,7 +35,7 @@ public class HomeController {
 
 	@GetMapping(value = "/")
 	public String showPrincipal(Model model) {
-		List<Movie> movieList = ms.getMovies();
+		List<Movie> movieList = ms.getMovieList();
 		List<Carousel> carouselList = cs.getCarouselList();
 		List<String> dateList = Utilities.getNextDays(sdf, 3);
 
@@ -54,7 +54,7 @@ public class HomeController {
 
 	@PostMapping(value = "/searchMovie")
 	private String searchMovies(Model model, @RequestParam("date") String date) {
-		List<Movie> movieList = ms.getMovies();
+		List<Movie> movieList = ms.getMovieList();
 		List<Carousel> carouselList = cs.getCarouselList();
 		List<String> dateList = Utilities.getNextDays(sdf, 3);
 

@@ -4,11 +4,14 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import spring.mvc.app.model.Movie;
 import spring.mvc.app.model.MovieTheater;
 import spring.mvc.app.model.Showtime;
 import spring.mvc.app.service.ShowtimeService;
 
+@Service
 public class ShowtimeServiceImpl implements ShowtimeService {
 	private List<Showtime> showtimeList = null;
 
@@ -26,7 +29,7 @@ public class ShowtimeServiceImpl implements ShowtimeService {
 	}
 
 	@Override
-	public List<Showtime> getShowtimes() {
+	public List<Showtime> getShowtimeList() {
 		return showtimeList;
 	}
 

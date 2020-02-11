@@ -63,7 +63,7 @@ public class MovieController {
 
 	@GetMapping(value = "/showList")
 	public String showList(Model model) {
-		model.addAttribute("movies", movieService.getMovies());
+		model.addAttribute("movies", movieService.getMovieList());
 		return "movie/showList";
 	}
 

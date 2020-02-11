@@ -6,7 +6,7 @@ import spring.mvc.app.model.Movie;
 
 public interface MovieService {
 	
-	public List<Movie> getMovies();
+	public List<Movie> getMovieList();
 	
 	public Movie getMovie(int id);
 	

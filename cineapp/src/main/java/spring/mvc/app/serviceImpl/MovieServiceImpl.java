@@ -108,7 +108,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public List<Movie> getMovies() {
+	public List<Movie> getMovieList() {
 		return movieList;
 	}
 

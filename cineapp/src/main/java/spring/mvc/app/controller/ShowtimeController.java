@@ -1,29 +1,16 @@
 package spring.mvc.app.controller;
 
-import java.text.ParseException;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.ConversionFailedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import spring.mvc.app.model.Carousel;
-import spring.mvc.app.model.Movie;
 import spring.mvc.app.model.Showtime;
 import spring.mvc.app.service.MovieService;
+import spring.mvc.app.service.MovieTheaterService;
 import spring.mvc.app.service.ShowtimeService;
-import spring.mvc.app.util.Utilities;
 
 @Controller
 @RequestMapping(value = "/showtime")
@@ -35,19 +22,19 @@ public class ShowtimeController {
 	@Autowired
 	private MovieService movieService;
 
-//	@Autowired
-//	private MovieTheaterService movieTheaterService;
+	@Autowired
+	private MovieTheaterService movieTheaterService;
 
 	@GetMapping(value = "/create")
 	public String create(@ModelAttribute Showtime showtime, Model model) {
-		model.addAttribute("movies", movieService.getMovies());
-//		model.addAttribute("movieTheaters", movieTheaterService.getMovies());
+		model.addAttribute("movieList", movieService.getMovieList());
+		model.addAttribute("movieTheaterList", movieTheaterService.getMovieTheaterList());
 		return "showtime/create";
 	}
 
 	@GetMapping(value = "/showList")
 	public String showList(Model model) {
-		model.addAttribute("showtimes", showtimeService.getShowtimes());
+		model.addAttribute("showtimes", showtimeService.getShowtimeList());
 		return "carousel/showList";
 	}
 
